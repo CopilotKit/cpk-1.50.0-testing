@@ -1,4 +1,4 @@
-from agent import ProverbsState, StateDeps, agent
+from src.agent import ProverbsState, StateDeps, agent
 
 app = agent.to_ag_ui(deps=StateDeps(ProverbsState()))
 
