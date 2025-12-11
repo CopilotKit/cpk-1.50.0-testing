@@ -11,6 +11,7 @@ import {
   useRenderToolCall,
 } from "@copilotkit/react-core";
 import { CopilotKitCSSProperties, CopilotSidebar } from "@copilotkit/react-ui";
+import { useAgent } from "@copilotkit/react-core/v2";
 import { useState } from "react";
 
 export default function CopilotKitPage() {
@@ -80,14 +81,14 @@ export default function CopilotKitPage() {
 
 function YourMainContent({ themeColor }: { themeColor: string }) {
   // 🪁 Shared State
-  const { state, setState } = useCoAgent<AgentState>({
-    name: "my_agent",
-    initialState: {
-      proverbs: [
-        "CopilotKit may be new, but its the best thing since sliced bread.",
-      ],
-    },
-  });
+  // const { state, setState } = useCoAgent<AgentState>({
+  //   name: "default",
+  //   initialState: {
+  //     proverbs: [
+  //       "CopilotKit may be new, but its the best thing since sliced bread.",
+  //     ],
+  //   },
+  // });
 
   //🪁 Generative UI
   useRenderToolCall(
@@ -121,7 +122,7 @@ function YourMainContent({ themeColor }: { themeColor: string }) {
       style={{ backgroundColor: themeColor }}
       className="h-screen flex justify-center items-center flex-col transition-colors duration-300"
     >
-      <ProverbsCard state={state} setState={setState} />
+      {/*<ProverbsCard state={state} setState={setState} />*/}
     </div>
   );
 }
